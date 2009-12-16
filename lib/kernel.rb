@@ -4,14 +4,18 @@ require 'mechanize'
 VISITED_URLS = []
 
 def parse(page)
-  unless page == nil
-    puts '1'
-    page.links_with(:text => %r{/[a-z]*}).each {|link|
-      puts '2'
-      puts link.text
 
+  unless page == nil
+    url = page.uri.to_s
+    VISITED_URLS << url
+
+    if url =~ %r{\.git}
+      puts url
+      return
+    end
+
+    page.links_with(:text => %r{/[a-z]*}).each {|link|
       unless VISITED_URLS.include?(link)
-        VISITED_URLS << link
         parse (CRAWLER.click(link))
       end
     }
