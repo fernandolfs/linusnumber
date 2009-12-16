@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uri: MyString
+  local_path: MyString
+  last_updated: 2009-12-16
+  last_parsed_revision: 
+
+two:
+  uri: MyString
+  local_path: MyString
+  last_updated: 2009-12-16
+  last_parsed_revision: 
